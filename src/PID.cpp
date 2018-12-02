@@ -23,6 +23,9 @@ void PID::UpdateError(double cte) {
   d_error = cte - p_error; // diff_cte = cte - prev_cte
   p_error = cte;
   i_error += cte; // sum of all cte
+  if (i_error >= 300*p_error) { // integrator saturation prevention
+    i_error = 0;
+  }
 }
 
 double PID::TotalError() {
