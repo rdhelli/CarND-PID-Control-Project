@@ -26,7 +26,7 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
-  double control value = - (Kp * p_error) - (Ki * i_error) - (Kd * d_error);
-  return control_value
+  double control_value = - (Kp * p_error) - (Ki * i_error) - (Kd * d_error);
+  return control_value;
 }
 
